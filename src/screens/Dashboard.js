@@ -6,18 +6,16 @@ import {
   View,
 } from 'react-native';
 import React, {useState, useEffect} from 'react';
-import NewDashboardCard from '../components/NewDashboardCard';
-import NewHeader from './NewHeader';
+import DashboardCard from '../components/DashboardCard';
+import Header from '../components/Header';
 import {ScrollView, GestureHandlerRootView} from 'react-native-gesture-handler';
-import NewDisclaimer from '../components/NewDisclaimer';
-import DisclamerModel from '../models/DisclamerModel';
-import DrawerModel from '../models/DrawerModel';
 
 export default function Dashboard(props) {
-  const [role, setRole] = useState(props.route.params.role);
-  let booleanRole = role === 'true';
-
+  // const [role, setRole] = useState(props.route.params.role);
+  // let booleanRole = role === 'true';
   // const [modelVisible, setModelVisible] = useState(booleanRole);
+  
+  const [role, setRole] = useState("true");
   const [modelVisible, setModelVisible] = useState(false);
   const [drawerVisible, setDrawerVisible] = useState(false);
 
@@ -27,12 +25,8 @@ export default function Dashboard(props) {
 
   return (
     <>
-      {modelVisible ? <DisclamerModel props={{setModelVisible}} /> : null}
-      {drawerVisible ? (
-        <DrawerModel props={{setDrawerVisible, role, props}} />
-      ) : null}
       <GestureHandlerRootView style={styles.container}>
-        <NewHeader props={{setDrawerVisible}} />
+        <Header props={{setDrawerVisible}} />
         <ScrollView>
           {role == 'false' ? <NewDisclaimer /> : null}
           <View style={styles.row}>
@@ -40,7 +34,7 @@ export default function Dashboard(props) {
               onPress={() => {
                 Navigator('Explore');
               }}>
-              <NewDashboardCard
+              <DashboardCard
                 propsData={{
                   bgColor: '#d5f5ff',
                   color: '#4e9ec8',
@@ -55,7 +49,7 @@ export default function Dashboard(props) {
                 onPress={() => {
                   Navigator('ShowFeedback');
                 }}>
-                <NewDashboardCard
+                <DashboardCard
                   propsData={{
                     bgColor: '#bfeec4',
                     color: '#21694c',
@@ -69,7 +63,7 @@ export default function Dashboard(props) {
                 onPress={() => {
                   Navigator('AddFeedback');
                 }}>
-                <NewDashboardCard
+                <DashboardCard
                   propsData={{
                     bgColor: '#bfeec4',
                     color: '#21694c',
@@ -85,7 +79,7 @@ export default function Dashboard(props) {
               onPress={() => {
                 Navigator('BarcodeScanner');
               }}>
-              <NewDashboardCard
+              <DashboardCard
                 propsData={{
                   bgColor: '#c1c6fe',
                   color: '#8973d9',
@@ -100,7 +94,7 @@ export default function Dashboard(props) {
                 onPress={() => {
                   Navigator('AddCountry');
                 }}>
-                <NewDashboardCard
+                <DashboardCard
                   propsData={{
                     bgColor: '#ffe9d5',
                     color: '#deb974',
@@ -119,7 +113,7 @@ export default function Dashboard(props) {
                   onPress={() => {
                     Navigator('AddCompany');
                   }}>
-                  <NewDashboardCard
+                  <DashboardCard
                     propsData={{
                       bgColor: '#d9e5f9',
                       color: '#459880',
@@ -132,7 +126,7 @@ export default function Dashboard(props) {
                   onPress={() => {
                     Navigator('AddCategory');
                   }}>
-                  <NewDashboardCard
+                  <DashboardCard
                     propsData={{
                       bgColor: '#ffe9d5',
                       color: '#deb974',
@@ -147,7 +141,7 @@ export default function Dashboard(props) {
                   onPress={() => {
                     Navigator('AddProduct');
                   }}>
-                  <NewDashboardCard
+                  <DashboardCard
                     propsData={{
                       bgColor: '#feffb3',
                       color: '#ca8c1e',
