@@ -8,6 +8,7 @@ import GoldCalculator from './src/screens/GoldCalculator';
 import SilverCalculator from './src/screens/SilverCalculator';
 import TradingGuide from './src/screens/TradingGuide';
 import Rates from './src/components/Rates';
+import Table from './src/components/Table';
 
 
 const Stack = createNativeStackNavigator();
@@ -16,6 +17,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
+        <Stack.Screen name="Table" component={Table} />
         <Stack.Screen name="Dashboard" component={Dashboard} />
         <Stack.Screen name="Rates" component={Rates} />
         <Stack.Screen name="LiveRates" component={LiveRates} />
