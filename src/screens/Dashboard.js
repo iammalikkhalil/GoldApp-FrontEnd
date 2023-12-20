@@ -14,8 +14,8 @@ export default function Dashboard(props) {
   // const [role, setRole] = useState(props.route.params.role);
   // let booleanRole = role === 'true';
   // const [modelVisible, setModelVisible] = useState(booleanRole);
-  
-  const [role, setRole] = useState("true");
+
+  const [role, setRole] = useState('true');
   const [modelVisible, setModelVisible] = useState(false);
   const [drawerVisible, setDrawerVisible] = useState(false);
 
@@ -27,134 +27,83 @@ export default function Dashboard(props) {
     <>
       <GestureHandlerRootView style={styles.container}>
         <Header props={{setDrawerVisible}} />
+        <View style={styles.break}></View>
         <ScrollView>
           {role == 'false' ? <NewDisclaimer /> : null}
           <View style={styles.row}>
             <TouchableOpacity
               onPress={() => {
-                Navigator('Explore');
+                Navigator('LiveRates');
               }}>
               <DashboardCard
                 propsData={{
                   bgColor: '#d5f5ff',
                   color: '#4e9ec8',
-                  icon: 'compass-outline',
-                  text: 'Explore',
+                  icon: 'access-point',
+                  text: 'Live Rates',
                 }}
               />
             </TouchableOpacity>
-
-            {role == 'true' ? (
-              <TouchableOpacity
-                onPress={() => {
-                  Navigator('ShowFeedback');
-                }}>
-                <DashboardCard
-                  propsData={{
-                    bgColor: '#bfeec4',
-                    color: '#21694c',
-                    icon: 'message-star-outline',
-                    text: 'Feedback',
-                  }}
-                />
-              </TouchableOpacity>
-            ) : (
-              <TouchableOpacity
-                onPress={() => {
-                  Navigator('AddFeedback');
-                }}>
-                <DashboardCard
-                  propsData={{
-                    bgColor: '#bfeec4',
-                    color: '#21694c',
-                    icon: 'message-star-outline',
-                    text: 'Feedback',
-                  }}
-                />
-              </TouchableOpacity>
-            )}
-          </View>
-          <View style={role == 'true' ? styles.row : styles.rowLeft}>
             <TouchableOpacity
               onPress={() => {
-                Navigator('BarcodeScanner');
+                Navigator('Insights');
               }}>
               <DashboardCard
                 propsData={{
                   bgColor: '#c1c6fe',
                   color: '#8973d9',
-                  icon: 'barcode-scan',
-                  text: 'Scan Barcode',
+                  icon: 'text-box-search',
+                  text: 'Insights',
+                }}
+              />
+            </TouchableOpacity>
+          </View>
+          <View style={styles.row}>
+            <TouchableOpacity
+              onPress={() => {
+                Navigator('GoldCalculator');
+              }}>
+              <DashboardCard
+                propsData={{
+                  bgColor: '#bfeec4',
+                  color: '#21694c',
+                  icon: 'gold',
+                  text: 'Gold Calculator',
                 }}
               />
             </TouchableOpacity>
 
-            {role == 'true' ? (
+            <TouchableOpacity
+              onPress={() => {
+                Navigator('SilverCalculator');
+              }}>
+              <DashboardCard
+                propsData={{
+                  bgColor: '#ffe9d5',
+                  color: '#deb974',
+                  icon: 'podium-silver',
+                  text: 'Silver Calculator',
+                }}
+              />
+            </TouchableOpacity>
+          </View>
+          <>
+            <View style={styles.rowLeft}>
               <TouchableOpacity
                 onPress={() => {
-                  Navigator('AddCountry');
+                  Navigator('TradingGuide');
                 }}>
                 <DashboardCard
                   propsData={{
-                    bgColor: '#ffe9d5',
-                    color: '#deb974',
-                    icon: 'flag-plus-outline',
-                    text: 'Add country',
+                    bgColor: '#d9e5f9',
+                    color: '#459880',
+                    icon: 'book-open-page-variant',
+                    text: 'Trading Guide',
                   }}
                 />
               </TouchableOpacity>
-            ) : null}
-          </View>
-
-          {role == 'true' ? (
-            <>
-              <View style={styles.row}>
-                <TouchableOpacity
-                  onPress={() => {
-                    Navigator('AddCompany');
-                  }}>
-                  <DashboardCard
-                    propsData={{
-                      bgColor: '#d9e5f9',
-                      color: '#459880',
-                      icon: 'office-building-outline',
-                      text: 'Add Company',
-                    }}
-                  />
-                </TouchableOpacity>
-                <TouchableOpacity
-                  onPress={() => {
-                    Navigator('AddCategory');
-                  }}>
-                  <DashboardCard
-                    propsData={{
-                      bgColor: '#ffe9d5',
-                      color: '#deb974',
-                      icon: 'gamepad-circle-outline',
-                      text: 'Add category',
-                    }}
-                  />
-                </TouchableOpacity>
-              </View>
-              <View style={styles.rowLeft}>
-                <TouchableOpacity
-                  onPress={() => {
-                    Navigator('AddProduct');
-                  }}>
-                  <DashboardCard
-                    propsData={{
-                      bgColor: '#feffb3',
-                      color: '#ca8c1e',
-                      icon: 'cart-plus',
-                      text: 'Add Product',
-                    }}
-                  />
-                </TouchableOpacity>
-              </View>
-            </>
-          ) : (
-            <></>
-          )}
+            </View>
+          </>
         </ScrollView>
       </GestureHandlerRootView>
     </>

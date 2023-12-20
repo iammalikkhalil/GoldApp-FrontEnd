@@ -12,7 +12,7 @@ export default function Header({props}) {
         }}>
         <Icon name="menu" color="black" size={30} />
       </TouchableOpacity>
-      <Text style={styles.headingText}>ProductPedia</Text>
+      <Text style={styles.headingText}>PakGoldInfo</Text>
       <Text style={{width: 30}}></Text>
     </View>
   );

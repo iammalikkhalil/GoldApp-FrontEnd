@@ -5,8 +5,6 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Colors from '../assets/Colors';
 
 export default function DashboardCard({propsData}) {
-
-  console.log("propsData", propsData);
   return (
     <View style={[styles.cardContainer, {backgroundColor: propsData.bgColor}]}>
       <Icon name={propsData.icon} color={propsData.color} size={40} />
@@ -31,5 +29,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     textTransform: 'uppercase',
     marginTop: 10,
+    textAlign: "center"
   },
 });
