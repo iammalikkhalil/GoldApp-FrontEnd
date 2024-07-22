@@ -1,5 +1,29 @@
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
+# PakGoldInfo
+
+PakGoldInfo is a comprehensive mobile application designed to provide up-to-date information on both international and local gold rates. With a range of features tailored for both goldsmiths and end-users, PakGoldInfo ensures you stay informed and make well-informed decisions in the gold market.
+
+## Features
+
+- **International Gold Rates:** Access the latest international gold prices with ease.
+- **Local Gold Rates:** Stay updated on the current local gold rates as reported by local goldsmiths.
+- **Goldsmith Updates:** Receive important updates directly from goldsmiths in the local market. Goldsmiths can send messages, and end-users can view them for the latest information.
+- **Rates Calculator:** Calculate gold rates based on weight and purity.
+- **Currency Exchange:** Convert between different currencies to understand gold prices in various regions.
+- **Additional Calculators:** Utilize various other calculators to assist with gold-related calculations and decisions.
+
+## Technologies Used
+
+- **Frontend:** React Native
+- **Backend:** Node.js, Express
+- **Database:** MongoDB
+
+PakGoldInfo combines the power of real-time data with user-friendly features to deliver a seamless experience for anyone involved in the gold market, from goldsmiths to individual investors.
+
+
+
+
 # Getting Started
 
 >**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
